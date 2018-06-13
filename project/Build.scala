@@ -54,8 +54,8 @@ object Build extends Build {
         description := "CRUD Repositories for Slick based persistence Scala projects",
         version := "1.4.4-SNAPSHOT",
 
-        scalaVersion := "2.11.8",
-        crossScalaVersions := Seq("2.11.8", "2.12.1", "2.10.6"),
+        scalaVersion := "2.12.2",
+        crossScalaVersions := Seq("2.11.8", "2.12.2", "2.10.6"),
 
         libraryDependencies ++= dependencies,
         libraryDependencies <++= scalaVersion (
