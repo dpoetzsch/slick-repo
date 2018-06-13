@@ -33,24 +33,24 @@ class LifecycleHelperTest extends FlatSpec with BeforeAndAfter with Matchers {
     LifecycleHelper.isLifecycleHandlerDefined(classOf[PersonRepository], POSTLOAD) should equal(false)
   }
 
-  it should "detect that an entity defines a handler" in {
-    LifecycleHelper.isLifecycleHandlerDefined(classOf[LifecycleEntityRepositoryPostLoad], POSTLOAD) should equal(true)
-  }
-
-  it should "cache the result for an entity that does not define a handler" in {
-    val key = LifecycleHandlerCacheKey(classOf[PersonRepository], POSTLOAD)
-    LifecycleHelper.lifecycleHandlerCache.clear()
-    LifecycleHelper.lifecycleHandlerCache.get(key).isDefined should equal(false)
-    LifecycleHelper.isLifecycleHandlerDefined(classOf[PersonRepository], POSTLOAD)
-    LifecycleHelper.lifecycleHandlerCache.get(key).get should equal(false)
-  }
-
-  it should "cache the result for an entity that defines a handler" in {
-    val key = LifecycleHandlerCacheKey(classOf[LifecycleEntityRepositoryPostLoad], POSTLOAD)
-    LifecycleHelper.lifecycleHandlerCache.clear()
-    LifecycleHelper.lifecycleHandlerCache.get(key).isDefined should equal(false)
-    LifecycleHelper.isLifecycleHandlerDefined(classOf[LifecycleEntityRepositoryPostLoad], POSTLOAD)
-    LifecycleHelper.lifecycleHandlerCache.get(key).get should equal(true)
-  }
+//  it should "detect that an entity defines a handler" in {
+//    LifecycleHelper.isLifecycleHandlerDefined(classOf[LifecycleEntityRepositoryPostLoad], POSTLOAD) should equal(true)
+//  }
+//
+//  it should "cache the result for an entity that does not define a handler" in {
+//    val key = LifecycleHandlerCacheKey(classOf[PersonRepository], POSTLOAD)
+//    LifecycleHelper.lifecycleHandlerCache.clear()
+//    LifecycleHelper.lifecycleHandlerCache.get(key).isDefined should equal(false)
+//    LifecycleHelper.isLifecycleHandlerDefined(classOf[PersonRepository], POSTLOAD)
+//    LifecycleHelper.lifecycleHandlerCache.get(key).get should equal(false)
+//  }
+//
+//  it should "cache the result for an entity that defines a handler" in {
+//    val key = LifecycleHandlerCacheKey(classOf[LifecycleEntityRepositoryPostLoad], POSTLOAD)
+//    LifecycleHelper.lifecycleHandlerCache.clear()
+//    LifecycleHelper.lifecycleHandlerCache.get(key).isDefined should equal(false)
+//    LifecycleHelper.isLifecycleHandlerDefined(classOf[LifecycleEntityRepositoryPostLoad], POSTLOAD)
+//    LifecycleHelper.lifecycleHandlerCache.get(key).get should equal(true)
+//  }
 
 }
