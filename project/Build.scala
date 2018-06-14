@@ -69,7 +69,7 @@ object Build extends Build {
         resolvers ++= dependencyResolvers,
 
         parallelExecution in Test := false,
-        coverageEnabled := true,
+//        coverageEnabled := true,
 
         testOptions in Test := Seq(Tests.Filter(baseFilter)),
         testOptions in Db2Test := Seq(Tests.Filter(db2Filter)),
